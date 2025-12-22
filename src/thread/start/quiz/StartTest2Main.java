@@ -24,9 +24,8 @@ public class StartTest2Main {
 
     public static void main(String[] args) {
         log("start");
-        Runnable runnable = new CounterRunnable();
-        Thread thread = new Thread(runnable);
-        thread.setName("counter");
+        Thread thread = new Thread(new CounterRunnable(), "counter"); // 생성자에 이름 설정 같이 가능!
+//        thread.setName("counter");
         thread.start();
         log("end");
     }
